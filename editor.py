@@ -13,10 +13,10 @@ doc.delete_pages([sum(lengths[:i])+i for i in range(6)])
 # Save pdf
 # doc.save('./Without_IDs.pdf')
 
-resolution_parameter = 300
+resolution_parameter = 100
 for ind,page in enumerate(doc):  # iterate through the pages
     pix = page.get_pixmap(dpi = resolution_parameter)  # render page to an image
-    pix.save("pages/page-%i.png" % page.number)  # store image as a PNG
+    pix.save(f"pages/page-{page.number:02}.png")  # store image as a PNG
 
     print(f"Processed page {ind}")
 
